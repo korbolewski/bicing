@@ -10,7 +10,6 @@ def write_to_tsv_file (dataset, output_file):
 	singlejson = data[0]
 	station = singlejson['stations'][0]
 	station_attributes = sorted(station.keys())
-	print station_attributes
 
 	headers = "updateDateTime" + "\t" + "updateTime" + "\t" + "\t".join(station_attributes)
 	with open(output_file, 'w') as f:
@@ -26,7 +25,7 @@ def write_to_tsv_file (dataset, output_file):
 				f.write( line )
 				f.write(os.linesep)
 
-input_file = "out1.txt"
+input_file = "out.txt"
 output_file = "data.tsv"
 
 if __name__ == "__main__":
